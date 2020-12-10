@@ -9,7 +9,7 @@
 		<property name="name" value="Erkan from XML"/>
 	</bean>
 
-	<bean id="personDetailID" class="pojo.PersonDetail" autowire="byName"/>
+	<bean id="personDetailID" class="pojo.PersonDetail" autowire="constructor"/>
 	
 
 </beans>

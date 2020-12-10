@@ -18,13 +18,17 @@ public class PersonDetail implements BeanNameAware, BeanFactoryAware, BeanClassL
 			System.out.println("PersonDetail no-arg constructor");
 		}
 		
+		public PersonDetail(Person p) {
+			System.out.println("*** PersonDetail constructor injection");
+		}
+		
 		public Person getPerson() {
 			return person;
 		}
 		
 		public void setPerson(Person person) {
 			this.person = person;
-			System.out.println("*** PersonDetail person object set");
+			System.out.println("*** PersonDetail setter injection");
 		}
 		
 		@Override
