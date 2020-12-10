@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="personID" class="pojo.Person">
+		<property name="name" value="Erkan from XML"/>
+		<property name="id" value="32"/>
+	</bean>
+	
+	<bean id="personLogID" class="pojo.PersonLog">
+		<property name="user" ref="personID"/>
+	</bean>
+
+	<bean id="personDetailID" class="pojo.PersonDetail">
+		<property name="person" ref="personID"/>
+		<property name="log"    ref="personLogID"/>
+	</bean>
+
+</beans>
