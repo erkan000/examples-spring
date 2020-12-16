@@ -1,6 +1,10 @@
 package start;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import config.AppConfig;
 import config.AppConfigInjection;
 import pojo.Person;
 import pojo.PersonDetail;
@@ -10,7 +14,7 @@ public class AppInjection {
 
 	public static void main(String[] args) {
 		
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfigInjection.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfigInjection.class);
 		
 		Person service = context.getBean("myPerson", Person.class);
 		System.out.println(service + " - " +service.getName());
@@ -20,8 +24,6 @@ public class AppInjection {
 
 		PersonDetail service3 = context.getBean("myPersonDetail", PersonDetail.class);
 		System.out.println(service3 + " - " +service3.getPerson() + " - " +service3.getLog());
-		
-		context.close();
 		
 	}
 
