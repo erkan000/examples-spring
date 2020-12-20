@@ -4,21 +4,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean id="emptyPersonID" class="pojo.Person"/>
 	
-	<bean id="personID" class="pojo.Person">
+	<bean id="person" class="pojo.Person">
 		<property name="name" value="Erkan from XML"/>
 		<property name="id" value="32"/>
 	</bean>
 	
-	<bean id="personLogID" class="pojo.PersonLog">
-		<property name="user" ref="personID"/>		
-	</bean>
+	<bean id="personLogID" class="pojo.PersonLog" autowire="byType" />
 
-	<bean id="personDetailID" class="pojo.PersonDetail">
-		<constructor-arg index="0" ref="personID"/>
-		<constructor-arg index="1" ref="personLogID"/>
-	</bean>
+	<bean id="personDetailID" class="pojo.PersonDetail" autowire="constructor"/>
+	
+	<bean id="personByName" class="pojo.PersonLog" autowire-candidate="false" autowire="byName" />
 
 </beans>

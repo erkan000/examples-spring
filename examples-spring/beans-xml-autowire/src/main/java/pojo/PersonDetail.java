@@ -6,7 +6,7 @@ public class PersonDetail {
 		private Person person;
 		
 		public void print() {
-			System.out.println("Person is:" + person.getName() + ", log is :" + log.getUser().getName());
+			System.out.println("Person is:" + person.getName() + ", log is :" + log.getPerson().getName());
 		}
 		
 		public PersonDetail(Person p, PersonLog l) {
