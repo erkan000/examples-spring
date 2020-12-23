@@ -1,7 +1,5 @@
 package pojo.app;
 
-import org.springframework.stereotype.Component;
-
 public class Person {
 
 	private int id;

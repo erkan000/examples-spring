@@ -1,23 +1,19 @@
 package pojo.stereotype;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component(value = "customPersonName")
 public class Person {
 
+	@Value("32")
 	private int id;
+	
+	@Value("Erkan")
 	private String name;
-	
-	public Person() {
-	}
-	
-	public Person(int id, String name) {
-		this.id= id;
-		this.name =name;
-	}
 
-	public void print() {
-		System.out.println("This is Person, named:\"" + name + "\", ID is :" + id);
+	public Person() {
+		System.out.println("*** Person Created: No-args const");
 	}
 
 	public int getId() {

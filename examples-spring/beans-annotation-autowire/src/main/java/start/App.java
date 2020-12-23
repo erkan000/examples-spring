@@ -1,11 +1,7 @@
 package start;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import config.AppConfig;
-import pojo.app.Person;
 import pojo.app.PersonDetail;
 import pojo.app.PersonLog;
 
@@ -13,14 +9,15 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		
-		PersonLog service = context.getBean("myBean", PersonLog.class);
-		System.out.println(service);
-		
+		PersonLog b1 = context.getBean("myBean", PersonLog.class);
+		System.out.println(b1.getUser());		
 
-		PersonDetail service2 = context.getBean("myBean2", PersonDetail.class);
-		System.out.println(service2.getPerson() + " - " + service2);
+		PersonDetail b2 = context.getBean("myBean2", PersonDetail.class);
+		System.out.println(b2.getPerson() + " - " + b2);
+		
+		context.close();
 	}
 
 }

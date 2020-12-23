@@ -1,14 +1,15 @@
 package pojo.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
 
 public class PersonLog {
-
 	
 	private Person user;
+	
+	public PersonLog() {
+		System.out.println("*** Person Log Created: No-args const");
+	}
 
 	public Person getUser() {
 		return user;
@@ -16,6 +17,7 @@ public class PersonLog {
 
 	@Autowired
 	public void setUser(Person user) {
+		System.out.println("*** Person INJECTED to PersonLog: By setter");
 		this.user = user;
 	}
 	
