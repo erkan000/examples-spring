@@ -14,6 +14,7 @@
 		<module>beans-xml-autowire</module>
 		<module>beans-annotation-autowire</module>
 		<module>beans-lifecycle</module>
+		<module>spel</module>
 	</modules>
 
 	<properties>
