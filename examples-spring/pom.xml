@@ -17,6 +17,7 @@
 		<module>spel</module>
 		<module>spring-data-jpa</module>
 		<module>spring-jdbc</module>
+		<module>spring-jpa</module>
 	</modules>
 
 	<properties>
