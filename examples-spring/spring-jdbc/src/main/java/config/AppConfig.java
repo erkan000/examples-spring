@@ -27,8 +27,8 @@ public class AppConfig {
 	}	
 	
 	@Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
+    public JdbcTemplate jdbcTemplate() {
+        return new JdbcTemplate(dataSource());
     }
 	
 	// This is for Transaction Management
