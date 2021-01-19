@@ -17,6 +17,19 @@ public class AppInitConfig extends AbstractAnnotationConfigDispatcherServletInit
 	@Override
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
-	}
+	}	
+	
+	// H2 Database Interface Start-up
+	// http://localhost:8080/mvc/console/
+	
+//	@Override
+//	public void onStartup(ServletContext servletContext) throws ServletException {
+//		super.onStartup(servletContext);
+//		ServletRegistration.Dynamic sevlet = servletContext.addServlet("h2-console", new WebServlet());
+//		sevlet.setLoadOnStartup(2);
+//		sevlet.addMapping("/console/*");
+//		System.out.println("H2 interface started ! ------------------");
+//		
+//	}
 
 }
