@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+</head>
+<body>
+<h1>Spring MVC with Thymeleaf</h1>
+
+	<form action="#" th:action="@{/crud}" method="post" th:object="${person}">
+		<table>
+			<tr>
+				<td><label th:text="Name"></label></td>
+				<td><input th:field="*{name}" /></td>
+			</tr>
+			<tr>
+				<td><label th:text="City"></label></td>
+				<td><input th:field="*{city}" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Save" /></td>
+			</tr>
+		</table>
+	</form>
+	
+	<table>
+    	<tr th:each="per: ${persons}">
+        	<td th:text="${perStat.index+1}" />
+        	<td th:text="${per.name}" />
+        	<td th:text="${per.city}" />
+    	</tr>
+	</table>
+
+</body>
+</html>

@@ -35,6 +35,7 @@ public class AppConfig implements WebMvcConfigurer{
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setOrder(0);
+        viewResolver.setCharacterEncoding("UTF-8");
         return viewResolver;
     }
 
@@ -44,6 +45,7 @@ public class AppConfig implements WebMvcConfigurer{
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
+        templateResolver.setCharacterEncoding("UTF-8");
         return templateResolver;
     }
 
