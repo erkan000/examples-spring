@@ -7,5 +7,16 @@
 <body>
 <h1>Spring MVC with Thymeleaf</h1>
 <p th:text="${message}"></p>
+
+Your browser locale is: <span th:text="${#locale.country}" >?</span>
+
+<p th:text="'HttpServletResponse status:' + ${#response.status}">?</p>
+
+<p th:text="'Context Path: ' + ${#request.contextPath}">?</p>
+
+<p>
+  Today is: <span th:text="${#calendars.format(today,'dd MMMM yyyy')}">13 May 2011</span>
+</p>
+ 
 </body>
 </html>
