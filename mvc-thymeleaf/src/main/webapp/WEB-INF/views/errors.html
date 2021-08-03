@@ -5,10 +5,20 @@
 <title>Thymeleaf</title>
 </head>
 <body>
-<h1>Spring MVC with Thymeleaf</h1>
 
-	<form action="#" th:action="@{/crud}" method="post" th:object="${person}">
-		<table>
+	<form action="#" th:action="@{/error}" method="post" th:object="${person}">
+		<fieldset>
+		 <legend>Legeend:</legend>
+
+
+			<div th:if="${#fields.hasErrors('global')}">
+				<h3>Global errors:</h3>
+				<p th:each="err : ${#fields.errors('global')}" th:text="${err}"
+					class="error" />
+			</div>
+
+
+			<table>
 			<tr>
 				<td><label th:text="Name"></label></td>
 				<td><input th:field="*{name}" /></td>
@@ -27,19 +37,8 @@
 				<td><input type="submit" value="Save" /></td>
 			</tr>
 		</table>
+		</fieldset>
 	</form>
 	
-	<table>
-    	<tr th:each="per: ${persons}" th:class="${perStat.odd} ? 'odd' : 'even'">
-        	<td th:text="${perStat.index+1}" />
-        	<td th:text="${per.name}" />
-        	<td th:text="${per.city}" />
-    	</tr>
-	</table>
-	
-	<p th:if="${ #lists.isEmpty(persons) }" th:text="'List is empty'" />
-
-	<p th:unless="${ #lists.isEmpty(persons) }" th:text="'List size:' + ${#lists.size(persons)}" />
-
 </body>
 </html>
