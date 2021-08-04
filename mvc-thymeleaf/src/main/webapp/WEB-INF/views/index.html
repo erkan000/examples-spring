@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+</head>
+<body>
+
+	<span th:text="|Welcome to our application, ${userName}!|" ></span>
+
+	<h1>Link URLs</h1>
+
+	<ul>
+		<li>
+			<a href="http://www.thymeleaf.org" th:href="@{http://www.thymeleaf.org}">Absolute url</a>
+		</li>
+		<li>
+			<!-- Will produce '/mvc/hello?orderId=111' (plus rewriting) -->
+			<a href="thy.html" th:href="@{/hello(orderId=${parame})}">Context Relative with var param</a>
+		</li>
+		<li>
+			<!-- Will produce '/mvc/order/111/details' (plus rewriting) -->
+			<a href="a.html" th:href="@{/order/{orderId}/details(orderId=${parame})}">Context Relative with path param</a>
+		</li>
+		<li>
+			<a href="a.html" th:href="@{~/anotherApp/hello}">Server relative</a>
+		</li>
+	</ul>
+</body>
+</html>
