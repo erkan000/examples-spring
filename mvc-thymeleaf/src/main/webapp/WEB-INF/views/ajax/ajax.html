@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript" src="ajax/ajax.js"></script>
+
+</head>
+<body>
+
+	<form th:object="${person}" id="ajaxForm">
+		<fieldset>
+		 <legend>Legeend:</legend>
+
+			<div th:if="${#fields.hasErrors('global')}">
+				<h3>Global errors:</h3>
+				<p th:each="err : ${#fields.errors('global')}" th:text="${err}"
+					class="error" />
+			</div>
+
+			<table>
+			<tr>
+				<td><label th:text="Name"></label></td>
+				<td><input th:field="*{name}" id="name" /></td>
+			</tr>
+			<tr>
+				<td><label th:text="City"></label></td>
+				<td>
+					<select th:field="*{city}" id="city">
+						<option th:value="'-1'">Please select...</option>
+						<option th:value="'06'" th:text="Ankara"></option>
+						<option th:value="'34'" th:text="Istanbul"></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Save" id="ajaxButton"/></td>
+			</tr>
+		</table>
+		</fieldset>
+		
+		<div id="result"></div>
+		
+	</form>
+	
+	
+	
+</body>
+</html>
