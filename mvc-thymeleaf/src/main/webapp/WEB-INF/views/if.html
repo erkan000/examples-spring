@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+</head>
+<body>
+
+	<h1>Conditional expressions</h1>
+
+	<div th:if="${count} > 10">
+		<p th:text="'10 dan buyuk'" />
+		<span
+			th:text="'Execution mode is ' + ( (${count} == 'dev') ? 'Development' : 'Production')">
+		</span>
+	</div>
+
+	<div th:if="${count} < 10">
+		<p th:text="'10 dan kucuk'" />
+		<span
+			th:text="'Execution mode is ' + ( (${count} == 'dev') ? 'Development' : 'Production')">
+		</span>
+	</div>
+
+	<!-- age is null !!! -->
+	<p>Age: <span th:text="${age} ?: '(no age specified)'">27</span>.</p>
+	<p th:text="veya">
+	<span th:text="${age} ?: _">no age specified</span>
+</body>
+</html>
