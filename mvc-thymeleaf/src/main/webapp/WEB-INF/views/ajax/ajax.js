@@ -8,8 +8,8 @@ $(document).ready(function () {
 	        event.preventDefault();
 
 	        var formData = {}
-	        ajaxForm["name"] = $("#name").val();
-	        ajaxForm["city"] = $("#city").val();
+	        formData["name"] = $("#name").val();
+	        formData["city"] = $("#city").val();
 
 	        $.ajax({
 	            type: "POST",
