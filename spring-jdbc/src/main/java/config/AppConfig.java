@@ -27,6 +27,14 @@ public class AppConfig {
 	}	
 	
 	@Bean
+	public DataSource dataSourceSecond() {
+		return new EmbeddedDatabaseBuilder()
+				.setType(EmbeddedDatabaseType.H2)
+				.addScript("classpath:h2/data.sql")
+				.build();
+	}	
+	
+	@Bean
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
