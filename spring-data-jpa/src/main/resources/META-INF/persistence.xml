@@ -6,7 +6,12 @@
 
 	<persistence-unit name="application" transaction-type="RESOURCE_LOCAL">
         <class>entity.Person</class>
+        <class>entity.Islem</class>
+        <class>entity.OdemeBaslik</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name = "hibernate.format_sql" value = "true" />
+		</properties>
 	</persistence-unit>
 
 </persistence>

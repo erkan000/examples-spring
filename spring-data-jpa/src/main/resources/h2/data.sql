@@ -6,3 +6,11 @@ insert into person (id, name, birthDay, active, city) values (3, 'Abbas', '1983-
 insert into person (id, name, birthDay, active, city) values (4, 'Veli', '1984-04-01', 'true', null);
 insert into person (id, name, birthDay, active, city) values (5, 'Osman', '1985-05-01', 'true', 'Antalya');
 insert into person (id, name, birthDay, active, city) values (6, 'Kaan', '1986-06-01', 'false', 'Isparta');
+
+delete odemeBaslik;
+
+insert into odemeBaslik (id,baslik) values (1, 'Food');
+
+delete islem;
+
+insert into islem (id, name, odemebaslik_id) values (1, 'test', 1);
